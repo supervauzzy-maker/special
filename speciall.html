@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Happy Birthday 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@300;400;500;600&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #17121b;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* =========================
+   OPENING
+========================= */
+
+#opening {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 50% 45%,
+        #ffd5d9 0%,
+        #ffe5df 30%,
+        #fff0e9 65%,
+        #fff8f4 100%);
+
+    transition: opacity 1.5s ease;
+}
+
+.opening-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.opening-small {
+    position: absolute;
+    top: 17%;
+
+    font-size: clamp(9px, 2.8vw, 12px);
+    letter-spacing: 3px;
+    color: #9b7278;
+    text-transform: uppercase;
+
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.big-heart {
+    width: 105px;
+    height: 105px;
+
+    position: relative;
+
+    transform: rotate(-45deg);
+
+    background: linear-gradient(135deg, #ff7185, #df3154);
+
+    box-shadow:
+        0 0 25px rgba(255, 85, 110, .5),
+        0 0 70px rgba(255, 85, 110, .3);
+
+    animation: heartPulse 2s infinite ease-in-out;
+}
+
+.big-heart::before,
+.big-heart::after {
+    content: "";
+    position: absolute;
+
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+    background: inherit;
+}
+
+.big-heart::before {
+    top: -52px;
+    left: 0;
+}
+
+.big-heart::after {
+    left: 52px;
+    top: 0;
+}
+
+.opening-bottom {
+    position: absolute;
+    bottom: 12%;
+
+    font-size: clamp(9px, 2.7vw, 11px);
+    letter-spacing: 2px;
+    color: #9b7278;
+
+    animation: blink 2s infinite;
+}
+
+
+/* =========================
+   HAPPY BIRTHDAY
+========================= */
+
+#happy {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100dvh;
+
+    z-index: 9;
+
+    opacity: 0;
+    pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle,
+        #ffd0d8 0%,
+        #f9aab9 45%,
+        #d96882 100%);
+
+    transition: opacity 1.5s ease;
+}
+
+.happy-text {
+    color: white;
+    text-align: center;
+
+    font-family: 'DM Serif Display', serif;
+
+    font-size: clamp(45px, 13vw, 90px);
+    line-height: .9;
+
+    text-shadow:
+        0 5px 30px rgba(100, 20, 40, .2);
+
+    opacity: 0;
+
+    transform: scale(.9);
+
+    transition: all 1.5s ease;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+#main {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    opacity: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at top,
+        #3d2944 0%,
+        #211824 45%,
+        #120f15 100%);
+
+    transition: opacity 1.5s ease;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding:
+        max(50px, env(safe-area-inset-top))
+        20px
+        max(50px, env(safe-area-inset-bottom));
+
+    /* PENTING UNTUK SCROLL */
+    overflow: visible;
+}
+
+
+/* DATE */
+
+.date {
+    color: #dcb6c1;
+
+    font-size: clamp(9px, 2.5vw, 11px);
+    letter-spacing: 5px;
+
+    margin-bottom: 8px;
+
+    opacity: .8;
+
+    text-align: center;
+}
+
+
+/* TITLE */
+
+.title {
+    font-family: 'DM Serif Display', serif;
+
+    color: #fff7f7;
+
+    font-size: clamp(35px, 10vw, 65px);
+
+    line-height: 1;
+
+    text-align: center;
+
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #d8bfc7;
+
+    font-size: clamp(9px, 3vw, 12px);
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 35px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   PAPER
+========================= */
+
+.paper {
+
+    position: relative;
+
+    width: min(90vw, 500px);
+
+    /*
+       Tidak menggunakan fixed height.
+       Tinggi mengikuti isi surat.
+    */
+    min-height: 440px;
+    height: auto;
+
+    padding: 42px 30px 45px;
+
+    background:
+        radial-gradient(
+            rgba(120,90,70,.07) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(255,255,255,.75),
+            rgba(255,255,255,.75)
+        );
+
+    background-size: 8px 8px, auto;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35),
+        0 5px 15px rgba(0,0,0,.15);
+
+    transform: rotate(-1deg);
+
+    color: #4d3d3b;
+}
+
+
+/* KERTAS */
+
+.paper::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 7px,
+            #f4e8d5 7px
+        );
+
+    opacity: .8;
+}
+
+
+/* TAPE */
+
+.tape {
+
+    position: absolute;
+
+    top: -17px;
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(2deg);
+
+    width: 90px;
+    height: 28px;
+
+    background: rgba(232, 191, 176, .65);
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.08);
+}
+
+
+/* PAPER TITLE */
+
+.paper-title {
+
+    font-family: 'Caveat', cursive;
+
+    font-size: clamp(27px, 7vw, 32px);
+
+    color: #9d5261;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   TYPING
+========================= */
+
+#typing {
+
+    white-space: pre-line;
+
+    font-family: 'Caveat', cursive;
+
+    font-size: clamp(19px, 5.5vw, 23px);
+
+    line-height: 1.5;
+
+    color: #514443;
+
+    text-align: left;
+
+    /*
+       Jangan pakai tinggi tetap.
+    */
+    min-height: 0;
+
+    overflow-wrap: break-word;
+}
+
+
+/* SIGNATURE */
+
+.signature {
+
+    text-align: right;
+
+    margin-top: 25px;
+
+    font-family: 'Caveat', cursive;
+
+    font-size: clamp(19px, 5vw, 22px);
+
+    color: #875461;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.celebrate-btn {
+
+    margin-top: 35px;
+    margin-bottom: 10px;
+
+    border:
+        1px solid rgba(255,255,255,.25);
+
+    background:
+        rgba(255,255,255,.08);
+
+    color: white;
+
+    padding: 13px 27px;
+
+    border-radius: 30px;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s;
+}
+
+.celebrate-btn:hover {
+    transform: scale(1.05);
+
+    background:
+        rgba(255,255,255,.15);
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music {
+
+    position: fixed;
+
+    right: max(20px, env(safe-area-inset-right));
+    top: max(20px, env(safe-area-inset-top));
+
+    z-index: 20;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,.25);
+
+    background:
+        rgba(255,255,255,.1);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    display: none;
+}
+
+
+/* =========================
+   FLOATING HEART
+========================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    animation:
+        floatUp linear forwards;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes heartPulse {
+
+    0%,100% {
+        transform:
+            rotate(-45deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            rotate(-45deg)
+            scale(1.12);
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink {
+
+    0%,100% {
+        opacity: .35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes floatUp {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 380px) {
+
+    .main-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .paper {
+        width: 92vw;
+        padding:
+            38px
+            20px
+            40px;
+    }
+
+    #typing {
+        font-size: 20px;
+        line-height: 1.45;
+    }
+
+    .paper-title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        letter-spacing: 2px;
+    }
+
+    .big-heart {
+        width: 85px;
+        height: 85px;
+    }
+
+    .big-heart::before,
+    .big-heart::after {
+        width: 85px;
+        height: 85px;
+    }
+
+    .big-heart::before {
+        top: -42px;
+    }
+
+    .big-heart::after {
+        left: 42px;
+    }
+}
+
+
+/* =========================
+   HP TINGGI / LAYAR PENDEK
+========================= */
+
+@media (max-height: 650px) {
+
+    .opening-small {
+        top: 10%;
+    }
+
+    .opening-bottom {
+        bottom: 8%;
+    }
+
+    .big-heart {
+        transform:
+            rotate(-45deg)
+            scale(.8);
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     OPENING
+========================= -->
+
+<section id="opening">
+
+    <div class="opening-content">
+
+        <div class="opening-small">
+            A little something for you
+        </div>
+
+        <div class="big-heart"></div>
+
+        <div class="opening-bottom">
+            Press anywhere to continue
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HAPPY BIRTHDAY
+========================= -->
+
+<section id="happy">
+
+    <div class="happy-text">
+        Happy<br>
+        Birthday!
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<section id="main">
+
+    <div class="main-content">
+
+        <div class="date">
+            15 MARCH
+        </div>
+
+        <div class="title">
+            Happy Birthday
+        </div>
+
+        <div class="subtitle">
+            to someone special
+        </div>
+
+
+        <!-- PAPER -->
+
+        <div class="paper">
+
+            <div class="tape"></div>
+
+            <div class="paper-title">
+                A little letter for you ♡
+            </div>
+
+            <div id="typing"></div>
+
+            <div class="signature">
+                — For you ♡
+            </div>
+
+        </div>
+
+
+        <button
+            class="celebrate-btn"
+            onclick="celebrate()">
+
+            Rayakan 🎉
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio id="bgMusic" preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button
+    class="music"
+    id="musicBtn"
+    onclick="toggleMusic()">
+
+    🎵
+
+</button>
+
+
+<script>
+
+const opening =
+    document.getElementById("opening");
+
+const happy =
+    document.getElementById("happy");
+
+const happyText =
+    document.querySelector(".happy-text");
+
+const main =
+    document.getElementById("main");
+
+const music =
+    document.getElementById("bgMusic");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+const typing =
+    document.getElementById("typing");
+
+
+/* =========================
+   PESAN
+========================= */
+
+const message = `Selamat ulang tahun! 🥳
+
+Semoga di umur yang baru ini,
+semua hal baik datang
+satu per satu.
+
+Semoga harapan,
+impian, dan cita-citamu
+bisa tercapai.
+
+Tetap jadi diri kamu sendiri
+dan terus melangkah.
+
+Semoga hari ini menjadi
+hari yang indah untuk kamu. ✨`;
+
+
+/* =========================
+   MUSIC
+   HANYA SEKALI PUTAR
+========================= */
+
+music.loop = false;
+
+
+/* =========================
+   OPENING CLICK
+========================= */
+
+opening.addEventListener("click", () => {
+
+    /* MUSIC */
+
+    music.volume = 0.35;
+
+    music.play().catch(() => {});
+
+    musicBtn.style.display = "block";
+
+
+    /* FADE OPENING */
+
+    opening.style.opacity = "0";
+
+
+    setTimeout(() => {
+
+        opening.style.display = "none";
+
+        happy.style.opacity = "1";
+
+        setTimeout(() => {
+
+            happyText.style.opacity = "1";
+
+            happyText.style.transform =
+                "scale(1)";
+
+        }, 300);
+
+    }, 1200);
+
+
+    /* SHOW MAIN */
+
+    setTimeout(() => {
+
+        happy.style.opacity = "0";
+
+        main.style.opacity = "1";
+
+        main.style.pointerEvents = "auto";
+
+
+        setTimeout(() => {
+
+            startTyping();
+            startHearts();
+
+        }, 800);
+
+    }, 4000);
+
+});
+
+
+/* =========================
+   TYPING
+========================= */
+
+let index = 0;
+
+function startTyping() {
+
+    typing.innerHTML = "";
+
+    index = 0;
+
+    typeWriter();
+
+}
+
+
+function typeWriter() {
+
+    if (index < message.length) {
+
+        const char =
+            message.charAt(index);
+
+        typing.innerHTML +=
+            char === "\n"
+                ? "<br>"
+                : char;
+
+        index++;
+
+        setTimeout(
+            typeWriter,
+            35
+        );
+    }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+let heartInterval;
+
+function startHearts() {
+
+    if (heartInterval) return;
+
+    heartInterval = setInterval(() => {
+
+        createHeart();
+
+    }, 700);
+
+}
+
+
+function createHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "floating-heart";
+
+
+    const hearts = [
+        "♡",
+        "♥",
+        "❤",
+        "✦",
+        "✧"
+    ];
+
+
+    heart.innerHTML =
+        hearts[
+            Math.floor(
+                Math.random() *
+                hearts.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.fontSize =
+        (12 +
+        Math.random() * 18) +
+        "px";
+
+
+    heart.style.animationDuration =
+        (5 +
+        Math.random() * 5) +
+        "s";
+
+
+    heart.style.opacity =
+        .4 +
+        Math.random() * .5;
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 10000);
+
+}
+
+
+/* =========================
+   CELEBRATE
+========================= */
+
+function celebrate() {
+
+    for (
+        let i = 0;
+        i < 60;
+        i++
+    ) {
+
+        setTimeout(() => {
+
+            createHeart();
+
+        }, i * 35);
+
+    }
+
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+function toggleMusic() {
+
+    if (music.paused) {
+
+        music.play();
+
+        musicBtn.innerHTML = "🎵";
+
+    } else {
+
+        music.pause();
+
+        musicBtn.innerHTML = "🔇";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
